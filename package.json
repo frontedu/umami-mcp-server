@@ -1,6 +1,7 @@
 {
   "name": "umami-mcp-server",
   "version": "1.0.0",
+  "mcpName": "io.github.frontedu/umami-mcp-server",
   "description": "The most complete MCP server for Umami Analytics — 11 tools, 4 prompts, works with Cloud and self-hosted",
   "type": "module",
   "main": "dist/index.js",

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.frontedu/umami-mcp-server",
+  "description": "The most complete MCP server for Umami Analytics — 11 tools, 4 prompts, Cloud + self-hosted",
+  "repository": {
+    "url": "https://github.com/frontedu/umami-mcp-server",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "umami-mcp-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "UMAMI_API_KEY",
+          "description": "Umami Cloud API key (required for Cloud)",
+          "required": false
+        },
+        {
+          "name": "UMAMI_API_BASE",
+          "description": "API base URL (default: https://api.umami.is/v1)",
+          "required": false
+        },
+        {
+          "name": "UMAMI_URL",
+          "description": "Self-hosted Umami instance URL",
+          "required": false
+        },
+        {
+          "name": "UMAMI_USERNAME",
+          "description": "Self-hosted login username",
+          "required": false
+        },
+        {
+          "name": "UMAMI_PASSWORD",
+          "description": "Self-hosted login password",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
