@@ -1,6 +1,7 @@
 node_modules
 dist
 *.tgz
+*.mcpb
 .env
 .DS_Store
 Thumbs.db
