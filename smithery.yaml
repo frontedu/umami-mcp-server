@@ -1,0 +1,28 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+
+configSchema:
+  type: object
+  required: []
+  properties:
+    UMAMI_API_KEY:
+      type: string
+      description: Umami Cloud API key (from Settings > API Keys).
+    UMAMI_API_BASE:
+      type: string
+      default: "https://api.umami.is/v1"
+      description: API base URL.
+    UMAMI_URL:
+      type: string
+      description: Self-hosted Umami instance URL.
+    UMAMI_USERNAME:
+      type: string
+      description: Self-hosted login username.
+    UMAMI_PASSWORD:
+      type: string
+      description: Self-hosted login password.
+
+commandFunction: |-
+  (config) => ({ command: 'npx', args: ['-y', 'umami-mcp-server'], env: { UMAMI_API_KEY: config.UMAMI_API_KEY || '', UMAMI_API_BASE: config.UMAMI_API_BASE || '', UMAMI_URL: config.UMAMI_URL || '', UMAMI_USERNAME: config.UMAMI_USERNAME || '', UMAMI_PASSWORD: config.UMAMI_PASSWORD || '' } })

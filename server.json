@@ -1,45 +1,55 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.frontedu/umami-mcp-server",
-  "description": "The most complete MCP server for Umami Analytics — 11 tools, 4 prompts, Cloud + self-hosted",
+  "description": "MCP server for Umami Analytics — 61 tools, 4 prompts, 3 resources. Cloud and self-hosted.",
   "repository": {
     "url": "https://github.com/frontedu/umami-mcp-server",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "umami-mcp-server",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "transport": {
         "type": "stdio"
       },
       "environmentVariables": [
         {
           "name": "UMAMI_API_KEY",
-          "description": "Umami Cloud API key (required for Cloud)",
-          "required": false
+          "description": "Umami Cloud API key (from Settings > API Keys)",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
         },
         {
           "name": "UMAMI_API_BASE",
           "description": "API base URL (default: https://api.umami.is/v1)",
-          "required": false
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
         },
         {
           "name": "UMAMI_URL",
           "description": "Self-hosted Umami instance URL",
-          "required": false
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
         },
         {
           "name": "UMAMI_USERNAME",
           "description": "Self-hosted login username",
-          "required": false
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
         },
         {
           "name": "UMAMI_PASSWORD",
           "description": "Self-hosted login password",
-          "required": false
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
         }
       ]
     }

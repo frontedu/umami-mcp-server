@@ -1,0 +1,46 @@
+{
+  "name": "umami-mcp-server",
+  "displayName": "Umami Analytics",
+  "version": "2.0.0",
+  "description": "MCP server for Umami Analytics — query website stats, events, sessions, reports and more.",
+  "icon": "logo.png",
+  "author": "Eddu",
+  "homepage": "https://github.com/frontedu/umami-mcp-server",
+  "repository": "https://github.com/frontedu/umami-mcp-server",
+  "license": "MIT",
+  "keywords": ["umami", "analytics", "pageviews", "sessions", "metrics"],
+  "supported_platforms": ["darwin", "win32", "linux"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "config": {
+      "UMAMI_API_KEY": {
+        "type": "string",
+        "description": "Umami Cloud API key (from Settings > API Keys)",
+        "required": false,
+        "sensitive": true
+      },
+      "UMAMI_API_BASE": {
+        "type": "string",
+        "description": "API base URL (default: https://api.umami.is/v1)",
+        "required": false
+      },
+      "UMAMI_URL": {
+        "type": "string",
+        "description": "Self-hosted Umami instance URL",
+        "required": false
+      },
+      "UMAMI_USERNAME": {
+        "type": "string",
+        "description": "Self-hosted login username",
+        "required": false
+      },
+      "UMAMI_PASSWORD": {
+        "type": "string",
+        "description": "Self-hosted login password",
+        "required": false,
+        "sensitive": true
+      }
+    }
+  }
+}
